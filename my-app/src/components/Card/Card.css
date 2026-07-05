@@ -1,0 +1,37 @@
+.card {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  max-width: 360px;
+  overflow: hidden;
+}
+
+.card__image {
+  aspect-ratio: 16 / 10;
+  background: var(--surface-muted);
+  object-fit: cover;
+  width: 100%;
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 20px;
+}
+
+.card__title {
+  color: var(--text-strong);
+  font-size: 22px;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.card__description {
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
