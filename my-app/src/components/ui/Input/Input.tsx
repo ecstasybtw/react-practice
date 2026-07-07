@@ -1,20 +1,29 @@
 import { useId } from 'react'
+import type { ChangeEventHandler } from 'react'
 import './Input.css'
 
 type Props = {
   label: string
+  name?: string
+  value?: string
+  onChange?: ChangeEventHandler<HTMLInputElement>
   placeholder?: string
   error?: string
   disabled?: boolean
   type?: 'text' | 'email' | 'password'
+  autoComplete?: string
 }
 
 function Input({
   label,
+  name,
+  value,
+  onChange,
   placeholder,
   error,
   disabled = false,
   type = 'text',
+  autoComplete,
 }: Props) {
   const inputId = useId()
   const errorId = `${inputId}-error`
@@ -30,8 +39,12 @@ function Input({
         className="input__control"
         disabled={disabled}
         id={inputId}
+        name={name}
+        value={value}
+        onChange={onChange}
         placeholder={placeholder}
         type={type}
+        autoComplete={autoComplete}
       />
       {error && (
         <p className="input__error" id={errorId}>
