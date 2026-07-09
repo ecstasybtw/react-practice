@@ -1,5 +1,5 @@
 import { useId } from 'react'
-import './Select.css'
+import styles from './Select.module.css'
 
 type SelectOption = {
   value: string
@@ -24,12 +24,12 @@ function Select({
   const selectId = useId()
 
   return (
-    <div className="select">
-      <label className="select__label" htmlFor={selectId}>
+    <div className={styles.select}>
+      <label className={styles.select__label} htmlFor={selectId}>
         {label}
       </label>
       <select
-        className="select__control"
+        className={styles.select__control}
         disabled={disabled}
         id={selectId}
         value={value}

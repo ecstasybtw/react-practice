@@ -1,4 +1,4 @@
-:root {
+:global(:root) {
   --page-bg: #f4f7fb;
   --surface: #ffffff;
   --surface-muted: #eef3f8;
@@ -24,15 +24,15 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-* {
+:global(*) {
   box-sizing: border-box;
 }
 
-html {
+:global(html) {
   scroll-behavior: smooth;
 }
 
-body {
+:global(body) {
   background:
     radial-gradient(circle at top left, rgba(49, 94, 251, 0.14), transparent 32rem),
     linear-gradient(135deg, #f8fbff 0%, var(--page-bg) 42%, #eef6f2 100%);
@@ -40,17 +40,17 @@ body {
   min-width: 320px;
 }
 
-button,
-input,
-select {
+:global(button),
+:global(input),
+:global(select) {
   font: inherit;
 }
 
-img {
+:global(img) {
   display: block;
   max-width: 100%;
 }
 
-#root {
+:global(#root) {
   min-height: 100vh;
 }

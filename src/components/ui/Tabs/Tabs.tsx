@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import type { ReactNode } from 'react'
-import './Tabs.css'
+import styles from './Tabs.module.css'
 
 type TabItem = {
   title: string
@@ -16,15 +16,15 @@ function Tabs({ tabs }: Props) {
   const activeTab = tabs[activeIndex]
 
   return (
-    <div className="tabs">
-      <div className="tabs__list" role="tablist" aria-label="Вкладки">
+    <div className={styles.tabs}>
+      <div className={styles.tabs__list} role="tablist" aria-label="Вкладки">
         {tabs.map((tab, index) => {
           const isActive = activeIndex === index
 
           return (
             <button
               aria-selected={isActive}
-              className={`tabs__button ${isActive ? 'tabs__button--active' : ''}`}
+              className={`${styles.tabs__button} ${isActive ? styles['tabs__button--active'] : ''}`}
               key={tab.title}
               role="tab"
               type="button"
@@ -36,7 +36,7 @@ function Tabs({ tabs }: Props) {
         })}
       </div>
 
-      <div className="tabs__panel" role="tabpanel">
+      <div className={styles.tabs__panel} role="tabpanel">
         {activeTab.content}
       </div>
     </div>

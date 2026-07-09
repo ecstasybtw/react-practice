@@ -1,6 +1,6 @@
 import { useId } from 'react'
 import type { ChangeEventHandler } from 'react'
-import './Input.css'
+import styles from './Input.module.css'
 
 type Props = {
   label: string
@@ -29,14 +29,14 @@ function Input({
   const errorId = `${inputId}-error`
 
   return (
-    <div className={`input ${error ? 'input--error' : ''}`}>
-      <label className="input__label" htmlFor={inputId}>
+    <div className={`${styles.input} ${error ? styles['input--error'] : ''}`}>
+      <label className={styles.input__label} htmlFor={inputId}>
         {label}
       </label>
       <input
         aria-describedby={error ? errorId : undefined}
         aria-invalid={Boolean(error)}
-        className="input__control"
+        className={styles.input__control}
         disabled={disabled}
         id={inputId}
         name={name}
@@ -47,7 +47,7 @@ function Input({
         autoComplete={autoComplete}
       />
       {error && (
-        <p className="input__error" id={errorId}>
+        <p className={styles.input__error} id={errorId}>
           {error}
         </p>
       )}

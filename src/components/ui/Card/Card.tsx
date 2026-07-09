@@ -1,6 +1,6 @@
 import Badge from '../Badge/Badge'
 import Button from '../Button/Button'
-import './Card.css'
+import styles from './Card.module.css'
 
 type BadgeVariant = 'default' | 'success' | 'warning' | 'danger'
 
@@ -24,12 +24,12 @@ function Card({
   onButtonClick,
 }: Props) {
   return (
-    <article className="card">
-      <img className="card__image" src={image} alt="" />
-      <div className="card__content">
+    <article className={styles.card}>
+      <img className={styles.card__image} src={image} alt="" />
+      <div className={styles.card__content}>
         <Badge text={badgeText} variant={badgeVariant} />
-        <h3 className="card__title">{title}</h3>
-        <p className="card__description">{description}</p>
+        <h3 className={styles.card__title}>{title}</h3>
+        <p className={styles.card__description}>{description}</p>
         <Button variant="primary" onClick={onButtonClick}>
           {buttonText}
         </Button>

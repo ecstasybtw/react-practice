@@ -1,4 +1,4 @@
-import './Badge.css'
+import styles from './Badge.module.css'
 
 type BadgeVariant = 'default' | 'success' | 'warning' | 'danger'
 
@@ -8,7 +8,11 @@ type Props = {
 }
 
 function Badge({ text, variant = 'default' }: Props) {
-  return <span className={`badge badge--${variant}`}>{text}</span>
+  return (
+    <span className={`${styles.badge} ${styles[`badge--${variant}`]}`}>
+      {text}
+    </span>
+  )
 }
 
 export default Badge

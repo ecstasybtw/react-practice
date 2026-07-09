@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import Button from '../../components/ui/Button/Button'
 import Input from '../../components/ui/Input/Input'
+import styles from '../../App.module.css'
 
 type LoginForm = {
   email: string
@@ -68,11 +69,11 @@ function LoginPage() {
   }
 
   return (
-    <main className="page auth-page">
-      <section className="auth-card">
+    <main className={`${styles.page} ${styles['auth-page']}`}>
+      <section className={styles['auth-card']}>
         <h1>Вход</h1>
 
-        <form className="auth-form" onSubmit={handleSubmit} noValidate>
+        <form className={styles['auth-form']} onSubmit={handleSubmit} noValidate>
           <Input
             label="Email"
             name="email"
@@ -97,7 +98,7 @@ function LoginPage() {
           <Button type="submit">Войти</Button>
         </form>
 
-        <p className="auth-card__footer">
+        <p className={styles['auth-card__footer']}>
           <Link to="/register">Зарегистрироваться</Link>
         </p>
       </section>

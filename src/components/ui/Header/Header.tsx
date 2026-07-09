@@ -1,5 +1,5 @@
 import Button from '../Button/Button'
-import './Header.css'
+import styles from './Header.module.css'
 
 type NavItem = {
   label: string
@@ -14,15 +14,15 @@ type Props = {
 
 function Header({ logo, navItems, buttonText }: Props) {
   return (
-    <header className="header">
-      <a className="header__logo" href="#top">
-        <span className="header__logo-mark">{logo.slice(0, 1)}</span>
+    <header className={styles.header}>
+      <a className={styles.header__logo} href="#top">
+        <span className={styles['header__logo-mark']}>{logo.slice(0, 1)}</span>
         <span>{logo}</span>
       </a>
 
-      <nav className="header__nav" aria-label="Основная навигация">
+      <nav className={styles.header__nav} aria-label="Основная навигация">
         {navItems.map((item) => (
-          <a key={item.href} className="header__link" href={item.href}>
+          <a key={item.href} className={styles.header__link} href={item.href}>
             {item.label}
           </a>
         ))}

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './Switch.css'
+import styles from './Switch.module.css'
 
 type Props = {
   label: string
@@ -11,19 +11,19 @@ function Switch({ label, defaultChecked = false, disabled = false }: Props) {
   const [isOn, setIsOn] = useState(defaultChecked)
 
   return (
-    <div className="switch">
-      <span className="switch__label">{label}</span>
+    <div className={styles.switch}>
+      <span className={styles.switch__label}>{label}</span>
       <button
         aria-checked={isOn}
-        className={`switch__control ${isOn ? 'switch__control--on' : ''}`}
+        className={`${styles.switch__control} ${isOn ? styles['switch__control--on'] : ''}`}
         disabled={disabled}
         role="switch"
         type="button"
         onClick={() => setIsOn(!isOn)}
       >
-        <span className="switch__thumb" />
+        <span className={styles.switch__thumb} />
       </button>
-      <span className="switch__status">
+      <span className={styles.switch__status}>
         {isOn ? 'Включено' : 'Выключено'}
       </span>
     </div>

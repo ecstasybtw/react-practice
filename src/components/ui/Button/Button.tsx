@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react'
-import './Button.css'
+import styles from './Button.module.css'
 
 type ButtonVariant = 'primary' | 'secondary' | 'danger'
 
@@ -20,7 +20,7 @@ function Button({
 }: Props) {
   return (
     <button
-      className={`button button--${variant}`}
+      className={`${styles.button} ${styles[`button--${variant}`]}`}
       disabled={disabled}
       type={type}
       onClick={onClick}

@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 import { useState } from 'react'
 import Button from '../Button/Button'
-import './Modal.css'
+import styles from './Modal.module.css'
 
 type Props = {
   buttonText: string
@@ -27,25 +27,25 @@ function Modal({ buttonText, title, children }: Props) {
       </Button>
 
       {isOpen && (
-        <div className="modal__overlay" onClick={closeModal}>
+        <div className={styles.modal__overlay} onClick={closeModal}>
           <div
             aria-modal="true"
-            className="modal"
+            className={styles.modal}
             role="dialog"
             onClick={(event) => event.stopPropagation()}
           >
-            <div className="modal__header">
-              <h3 className="modal__title">{title}</h3>
+            <div className={styles.modal__header}>
+              <h3 className={styles.modal__title}>{title}</h3>
               <button
                 aria-label="Закрыть окно"
-                className="modal__close"
+                className={styles.modal__close}
                 type="button"
                 onClick={closeModal}
               >
                 ×
               </button>
             </div>
-            <div className="modal__content">{children}</div>
+            <div className={styles.modal__content}>{children}</div>
           </div>
         </div>
       )}
