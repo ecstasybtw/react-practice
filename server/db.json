@@ -1,0 +1,53 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Белая джинсовая жилетка",
+      "price": 3200,
+      "category": "clothes",
+      "image": "https://placehold.co/400x500",
+      "description": "Стильная белая джинсовая жилетка для летних образов",
+      "inStock": true
+    },
+    {
+      "id": 2,
+      "title": "Черная базовая майка",
+      "price": 1200,
+      "category": "clothes",
+      "image": "https://placehold.co/400x500",
+      "description": "Базовая черная майка на каждый день",
+      "inStock": true
+    },
+    {
+      "id": 3,
+      "title": "Белые рваные джинсы",
+      "price": 3700,
+      "category": "clothes",
+      "image": "https://placehold.co/400x500",
+      "description": "Белые джинсы с рваными элементами",
+      "inStock": true
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "clothes",
+      "title": "Одежда"
+    },
+    {
+      "id": 2,
+      "name": "accessories",
+      "title": "Аксессуары"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Даниил",
+      "email": "daniel@example.com",
+      "phone": "+7 900 000 00 00"
+    }
+  ],
+  "cart": [],
+  "orders": []
+}
