@@ -46,6 +46,13 @@
       "name": "Даниил",
       "email": "daniel@example.com",
       "phone": "+7 900 000 00 00"
+    },
+    {
+      "email": "test@example.com",
+      "password": "$2a$10$rPKMT6ksNMMA96fqC7ihS.VXwtWt2xBxZHsnIp8XKlMHkC6SLDFSu",
+      "name": "Тестовый Юзер",
+      "role": "user",
+      "id": 2
     }
   ],
   "cart": [],

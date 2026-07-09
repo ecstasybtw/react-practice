@@ -53,6 +53,11 @@
   gap: 16px;
 }
 
+.auth-error {
+  color: var(--danger);
+  margin: 0;
+}
+
 .auth-card__footer {
   margin: 18px 0 0;
   text-align: center;
