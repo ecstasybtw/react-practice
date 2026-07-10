@@ -1,23 +1,24 @@
 .input {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  width: min(100%, 360px);
+  gap: 10px;
+  width: 100%;
 }
 
 .input__label {
   color: var(--text-strong);
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
 }
 
 .input__control {
   background: #ffffff;
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 10px;
   color: var(--text-strong);
-  min-height: 46px;
-  padding: 0 14px;
+  font-size: 18px;
+  min-height: 58px;
+  padding: 0 18px;
 }
 
 .input__control::placeholder {
@@ -42,6 +43,6 @@
 
 .input__error {
   color: var(--danger);
-  font-size: 13px;
+  font-size: 14px;
   margin: 0;
 }

@@ -1,8 +1,8 @@
 .page {
   margin: 0 auto;
-  max-width: 480px;
+  max-width: 620px;
   min-height: 100vh;
-  padding: 40px 20px;
+  padding: 56px 24px;
 }
 
 .home-page,
@@ -16,8 +16,9 @@
 .home-page h1,
 .auth-card h1 {
   color: var(--text-strong);
-  font-size: 32px;
-  margin: 0 0 24px;
+  font-size: 40px;
+  line-height: 1.1;
+  margin: 0 0 34px;
 }
 
 .home-page__links {
@@ -50,7 +51,13 @@
 
 .auth-form {
   display: grid;
-  gap: 16px;
+  gap: 22px;
+  width: 100%;
+}
+
+.auth-form button {
+  margin-top: 4px;
+  width: 100%;
 }
 
 .auth-error {
@@ -59,12 +66,13 @@
 }
 
 .auth-card__footer {
-  margin: 18px 0 0;
+  margin: 24px 0 0;
   text-align: center;
 }
 
 .auth-card__footer a {
   color: var(--primary);
+  font-size: 20px;
   font-weight: 700;
   text-decoration: none;
 }
@@ -73,9 +81,15 @@
   text-decoration: underline;
 }
 
-@media (max-width: 520px) {
+@media (max-width: 680px) {
   .page {
     padding: 24px 14px;
+  }
+
+  .home-page h1,
+  .auth-card h1 {
+    font-size: 34px;
+    margin-bottom: 28px;
   }
 
   .home-page__links {
