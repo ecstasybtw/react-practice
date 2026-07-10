@@ -1,15 +1,6 @@
+import type { Product } from '../../../api/productsApi'
 import Button from '../Button/Button'
 import styles from './ProductCard.module.css'
-
-export type Product = {
-  id: number
-  title: string
-  price: number
-  category: string
-  image: string
-  description: string
-  inStock: boolean
-}
 
 type Props = {
   product: Product

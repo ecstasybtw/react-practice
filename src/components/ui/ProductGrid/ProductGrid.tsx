@@ -1,5 +1,5 @@
+import type { Product } from '../../../api/productsApi'
 import ProductCard from '../ProductCard/ProductCard'
-import type { Product } from '../ProductCard/ProductCard'
 import styles from './ProductGrid.module.css'
 
 type Props = {
