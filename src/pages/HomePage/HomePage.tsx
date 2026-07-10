@@ -6,6 +6,9 @@ function HomePage() {
     <main className={`${styles.page} ${styles['home-page']}`}>
       <h1>Главная</h1>
       <nav className={styles['home-page__links']}>
+        <Link className={styles['page-link']} to="/catalog">
+          Каталог
+        </Link>
         <Link className={styles['page-link']} to="/register">
           Регистрация
         </Link>

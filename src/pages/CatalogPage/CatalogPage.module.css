@@ -1,0 +1,28 @@
+.page {
+  margin: 0 auto;
+  max-width: 1040px;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+.title {
+  color: var(--text-strong);
+  font-size: 32px;
+  margin: 0 0 24px;
+}
+
+.message {
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.error {
+  color: var(--danger);
+  margin: 0;
+}
+
+@media (max-width: 520px) {
+  .page {
+    padding: 24px 14px;
+  }
+}
