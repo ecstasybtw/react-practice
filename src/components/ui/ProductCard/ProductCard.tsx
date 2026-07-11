@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import type { Product } from '../../../api/productsApi'
 import Button from '../Button/Button'
 import styles from './ProductCard.module.css'
@@ -18,11 +19,15 @@ function ProductCard({ product, onAddToCart }: Props) {
 
   return (
     <article className={styles.card}>
-      <img className={styles.image} src={product.image} alt={product.title} />
+      <Link className={styles.imageLink} to={`/products/${product.id}`}>
+        <img className={styles.image} src={product.image} alt={product.title} />
+      </Link>
 
       <div className={styles.content}>
         <p className={styles.category}>{product.category}</p>
-        <h3 className={styles.title}>{product.title}</h3>
+        <h3 className={styles.title}>
+          <Link to={`/products/${product.id}`}>{product.title}</Link>
+        </h3>
         <p className={styles.description}>{product.description}</p>
         <p className={styles.price}>{formatPrice(product.price)}</p>
 

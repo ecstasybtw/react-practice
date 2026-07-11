@@ -4,6 +4,7 @@ import CartPage from './pages/CartPage/CartPage'
 import CatalogPage from './pages/CatalogPage/CatalogPage'
 import HomePage from './pages/HomePage/HomePage'
 import LoginPage from './pages/LoginPage/LoginPage'
+import ProductPage from './pages/ProductPage/ProductPage'
 import ProfilePage from './pages/ProfilePage/ProfilePage'
 import RegisterPage from './pages/RegisterPage/RegisterPage'
 import Navbar from './widgets/Navbar/Navbar'
@@ -19,6 +20,14 @@ function App() {
           element={
             <ProtectedRoute>
               <CatalogPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/products/:productId"
+          element={
+            <ProtectedRoute>
+              <ProductPage />
             </ProtectedRoute>
           }
         />
