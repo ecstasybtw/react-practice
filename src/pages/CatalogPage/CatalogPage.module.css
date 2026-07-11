@@ -21,6 +21,19 @@
   margin: 0;
 }
 
+.content {
+  align-items: start;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 220px 1fr;
+}
+
+@media (max-width: 720px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 520px) {
   .page {
     padding: 24px 14px;

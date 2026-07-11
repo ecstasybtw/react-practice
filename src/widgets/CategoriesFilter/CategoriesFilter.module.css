@@ -1,0 +1,58 @@
+.filter {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.title {
+  color: var(--text-strong);
+  font-size: 20px;
+  margin: 0 0 14px;
+}
+
+.list {
+  display: grid;
+  gap: 8px;
+}
+
+.button {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-strong);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+}
+
+.button:hover {
+  background: var(--surface-muted);
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #ffffff;
+}
+
+.active:hover {
+  background: var(--primary-hover);
+}
+
+@media (max-width: 720px) {
+  .filter {
+    padding: 14px;
+  }
+
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
