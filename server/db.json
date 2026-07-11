@@ -26,6 +26,96 @@
       "image": "https://placehold.co/400x500",
       "description": "Белые джинсы с рваными элементами",
       "inStock": true
+    },
+    {
+      "id": 4,
+      "title": "Серая oversize худи",
+      "price": 4200,
+      "category": "clothes",
+      "image": "https://placehold.co/400x500",
+      "description": "Мягкая худи свободного кроя для прохладной погоды",
+      "inStock": true
+    },
+    {
+      "id": 5,
+      "title": "Бежевый тренч",
+      "price": 8900,
+      "category": "clothes",
+      "image": "https://placehold.co/400x500",
+      "description": "Классический тренч с поясом и прямым силуэтом",
+      "inStock": true
+    },
+    {
+      "id": 6,
+      "title": "Черные брюки палаццо",
+      "price": 4600,
+      "category": "clothes",
+      "image": "https://placehold.co/400x500",
+      "description": "Широкие брюки из плотной ткани для базового гардероба",
+      "inStock": true
+    },
+    {
+      "id": 7,
+      "title": "Белая рубашка",
+      "price": 2900,
+      "category": "clothes",
+      "image": "https://placehold.co/400x500",
+      "description": "Свободная рубашка из хлопка с аккуратным воротником",
+      "inStock": true
+    },
+    {
+      "id": 8,
+      "title": "Кожаный ремень",
+      "price": 1600,
+      "category": "accessories",
+      "image": "https://placehold.co/400x500",
+      "description": "Черный ремень с простой металлической пряжкой",
+      "inStock": true
+    },
+    {
+      "id": 9,
+      "title": "Мини-сумка",
+      "price": 5200,
+      "category": "accessories",
+      "image": "https://placehold.co/400x500",
+      "description": "Компактная сумка через плечо для телефона и мелочей",
+      "inStock": true
+    },
+    {
+      "id": 10,
+      "title": "Бейсболка Store",
+      "price": 1400,
+      "category": "accessories",
+      "image": "https://placehold.co/400x500",
+      "description": "Базовая бейсболка с регулируемой застежкой",
+      "inStock": true
+    },
+    {
+      "id": 11,
+      "title": "Черное платье миди",
+      "price": 6100,
+      "category": "clothes",
+      "image": "https://placehold.co/400x500",
+      "description": "Лаконичное платье средней длины для повседневных образов",
+      "inStock": true
+    },
+    {
+      "id": 12,
+      "title": "Джинсовая юбка",
+      "price": 3300,
+      "category": "clothes",
+      "image": "https://placehold.co/400x500",
+      "description": "Юбка из плотного денима с высокой посадкой",
+      "inStock": true
+    },
+    {
+      "id": 13,
+      "title": "Солнцезащитные очки",
+      "price": 2400,
+      "category": "accessories",
+      "image": "https://placehold.co/400x500",
+      "description": "Очки с темными линзами и легкой пластиковой оправой",
+      "inStock": false
     }
   ],
   "categories": [
