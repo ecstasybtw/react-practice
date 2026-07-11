@@ -14,7 +14,8 @@
 }
 
 .home-page h1,
-.auth-card h1 {
+.auth-card h1,
+.profile-card h1 {
   color: var(--text-strong);
   font-size: 40px;
   line-height: 1.1;
@@ -47,6 +48,23 @@
 
 .auth-card {
   width: 100%;
+}
+
+.profile-card {
+  display: grid;
+  gap: 24px;
+  width: 100%;
+}
+
+.profile-info {
+  display: grid;
+  gap: 8px;
+}
+
+.profile-info p {
+  color: var(--text-strong);
+  font-size: 18px;
+  margin: 0;
 }
 
 .auth-form {
@@ -87,7 +105,8 @@
   }
 
   .home-page h1,
-  .auth-card h1 {
+  .auth-card h1,
+  .profile-card h1 {
     font-size: 34px;
     margin-bottom: 28px;
   }
