@@ -1,0 +1,46 @@
+import { NavLink } from 'react-router-dom'
+import styles from './Navbar.module.css'
+
+function Navbar() {
+  return (
+    <header className={styles.navbar}>
+      <div className={styles.inner}>
+        <NavLink className={styles.logo} to="/">
+          Store
+        </NavLink>
+
+        <nav className={styles.links} aria-label="Основная навигация">
+          <button className={styles.searchButton} type="button">
+            Поиск
+          </button>
+          <NavLink
+            className={({ isActive }) =>
+              `${styles.link} ${isActive ? styles.active : ''}`
+            }
+            to="/catalog"
+          >
+            Каталог
+          </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              `${styles.link} ${isActive ? styles.active : ''}`
+            }
+            to="/cart"
+          >
+            Корзина
+          </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              `${styles.link} ${isActive ? styles.active : ''}`
+            }
+            to="/profile"
+          >
+            Личный кабинет
+          </NavLink>
+        </nav>
+      </div>
+    </header>
+  )
+}
+
+export default Navbar
