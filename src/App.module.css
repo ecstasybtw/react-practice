@@ -40,8 +40,7 @@
   background: var(--surface-muted);
 }
 
-.page-link:focus-visible,
-.auth-card__footer a:focus-visible {
+.page-link:focus-visible {
   outline: 2px solid var(--primary);
   outline-offset: 2px;
 }
@@ -65,38 +64,6 @@
   color: var(--text-strong);
   font-size: 18px;
   margin: 0;
-}
-
-.auth-form {
-  display: grid;
-  gap: 22px;
-  width: 100%;
-}
-
-.auth-form button {
-  margin-top: 4px;
-  width: 100%;
-}
-
-.auth-error {
-  color: var(--danger);
-  margin: 0;
-}
-
-.auth-card__footer {
-  margin: 24px 0 0;
-  text-align: center;
-}
-
-.auth-card__footer a {
-  color: var(--primary);
-  font-size: 20px;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.auth-card__footer a:hover {
-  text-decoration: underline;
 }
 
 @media (max-width: 680px) {

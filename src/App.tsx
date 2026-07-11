@@ -1,12 +1,12 @@
 import { Route, Routes } from 'react-router-dom'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
-import Navbar from './components/ui/Navbar/Navbar'
 import CartPage from './pages/CartPage/CartPage'
 import CatalogPage from './pages/CatalogPage/CatalogPage'
 import HomePage from './pages/HomePage/HomePage'
 import LoginPage from './pages/LoginPage/LoginPage'
 import ProfilePage from './pages/ProfilePage/ProfilePage'
 import RegisterPage from './pages/RegisterPage/RegisterPage'
+import Navbar from './widgets/Navbar/Navbar'
 
 function App() {
   return (
