@@ -6,15 +6,26 @@ import styles from './ProductCard.module.css'
 type Props = {
   product: Product
   onAddToCart?: (productId: number) => void
+  onDeleteProduct?: (productId: number) => void
+  isDeleting?: boolean
 }
 
 function formatPrice(price: number) {
   return `${price.toLocaleString('ru-RU')} ₽`
 }
 
-function ProductCard({ product, onAddToCart }: Props) {
+function ProductCard({
+  product,
+  onAddToCart,
+  onDeleteProduct,
+  isDeleting = false,
+}: Props) {
   const handleAddToCart = () => {
     onAddToCart?.(product.id)
+  }
+
+  const handleDeleteProduct = () => {
+    onDeleteProduct?.(product.id)
   }
 
   return (
@@ -38,6 +49,17 @@ function ProductCard({ product, onAddToCart }: Props) {
         >
           {product.inStock ? 'В корзину' : 'Нет в наличии'}
         </Button>
+
+        {onDeleteProduct && (
+          <Button
+            disabled={isDeleting}
+            variant="danger"
+            type="button"
+            onClick={handleDeleteProduct}
+          >
+            {isDeleting ? 'Удаление...' : 'Удалить товар'}
+          </Button>
+        )}
       </div>
     </article>
   )

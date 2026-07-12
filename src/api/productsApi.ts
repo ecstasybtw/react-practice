@@ -37,3 +37,16 @@ export function getProducts() {
 export function getProductById(productId: number) {
   return requestProducts<Product>(`/${productId}`)
 }
+
+export async function deleteProduct(productId: number, accessToken: string) {
+  const response = await fetch(`${PRODUCTS_API_URL}/${productId}`, {
+    method: 'DELETE',
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+  })
+
+  if (!response.ok) {
+    throw new ProductsApiError('Не удалось удалить товар', response.status)
+  }
+}

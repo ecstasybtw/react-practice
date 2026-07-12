@@ -7,6 +7,7 @@ type ProductsState = {
   isLoading: boolean
   error: string
   loadProducts: () => Promise<void>
+  removeProduct: (productId: number) => void
 }
 
 export const useProductsStore = create<ProductsState>()((set) => ({
@@ -25,5 +26,10 @@ export const useProductsStore = create<ProductsState>()((set) => ({
     } finally {
       set({ isLoading: false })
     }
+  },
+  removeProduct: (productId) => {
+    set((state) => ({
+      products: state.products.filter((product) => product.id !== productId),
+    }))
   },
 }))

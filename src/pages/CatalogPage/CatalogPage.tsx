@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react'
 import { getCategories } from '../../api/categoriesApi'
 import type { Category } from '../../api/categoriesApi'
+import { deleteProduct } from '../../api/productsApi'
 import ProductGrid from '../../components/ui/ProductGrid/ProductGrid'
+import { useAuthStore } from '../../store/authStore'
 import { useCartStore } from '../../store/cartStore'
 import { useProductsStore } from '../../store/productsStore'
 import CategoriesFilter, {
@@ -14,10 +16,17 @@ function CatalogPage() {
   const isLoading = useProductsStore((state) => state.isLoading)
   const error = useProductsStore((state) => state.error)
   const loadProducts = useProductsStore((state) => state.loadProducts)
+  const removeProduct = useProductsStore((state) => state.removeProduct)
+  const accessToken = useAuthStore((state) => state.accessToken)
+  const user = useAuthStore((state) => state.user)
   const addProduct = useCartStore((state) => state.addProduct)
+  const removeProductFromCart = useCartStore((state) => state.removeProduct)
   const [categories, setCategories] = useState<Category[]>([])
   const [categoriesError, setCategoriesError] = useState('')
+  const [deleteError, setDeleteError] = useState('')
+  const [deletingProductId, setDeletingProductId] = useState<number | null>(null)
   const [selectedCategory, setSelectedCategory] = useState(ALL_CATEGORIES)
+  const isAdmin = user?.role === 'admin'
 
   const filteredProducts =
     selectedCategory === ALL_CATEGORIES
@@ -65,6 +74,26 @@ function CatalogPage() {
     addProduct(product)
   }
 
+  const handleDeleteProduct = async (productId: number) => {
+    if (!accessToken) {
+      setDeleteError('Чтобы удалить товар, нужно войти в аккаунт')
+      return
+    }
+
+    setDeleteError('')
+    setDeletingProductId(productId)
+
+    try {
+      await deleteProduct(productId, accessToken)
+      removeProduct(productId)
+      removeProductFromCart(productId)
+    } catch {
+      setDeleteError('Не удалось удалить товар')
+    } finally {
+      setDeletingProductId(null)
+    }
+  }
+
   return (
     <main className={styles.page}>
       <h1 className={styles.title}>Каталог</h1>
@@ -72,6 +101,7 @@ function CatalogPage() {
       {isLoading && <p className={styles.message}>Загрузка товаров...</p>}
       {error && <p className={styles.error}>{error}</p>}
       {categoriesError && <p className={styles.error}>{categoriesError}</p>}
+      {deleteError && <p className={styles.error}>{deleteError}</p>}
       {!isLoading && !error && (
         <div className={styles.content}>
           <CategoriesFilter
@@ -82,6 +112,8 @@ function CatalogPage() {
           <ProductGrid
             products={filteredProducts}
             onAddToCart={handleAddToCart}
+            onDeleteProduct={isAdmin ? handleDeleteProduct : undefined}
+            deletingProductId={deletingProductId}
           />
         </div>
       )}

@@ -5,9 +5,16 @@ import styles from './ProductGrid.module.css'
 type Props = {
   products: Product[]
   onAddToCart?: (productId: number) => void
+  onDeleteProduct?: (productId: number) => void
+  deletingProductId?: number | null
 }
 
-function ProductGrid({ products, onAddToCart }: Props) {
+function ProductGrid({
+  products,
+  onAddToCart,
+  onDeleteProduct,
+  deletingProductId = null,
+}: Props) {
   if (products.length === 0) {
     return <p className={styles.empty}>Товары не найдены</p>
   }
@@ -19,6 +26,8 @@ function ProductGrid({ products, onAddToCart }: Props) {
           key={product.id}
           product={product}
           onAddToCart={onAddToCart}
+          onDeleteProduct={onDeleteProduct}
+          isDeleting={deletingProductId === product.id}
         />
       ))}
     </div>
