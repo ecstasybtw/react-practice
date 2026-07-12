@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 import { getProductById } from '../../api/productsApi'
 import type { Product } from '../../api/productsApi'
 import Button from '../../components/ui/Button/Button'
+import { useCartStore } from '../../store/cartStore'
 import styles from './ProductPage.module.css'
 
 function formatPrice(price: number) {
@@ -17,6 +18,7 @@ function ProductPage() {
   const [product, setProduct] = useState<Product | null>(null)
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
+  const addProduct = useCartStore((state) => state.addProduct)
   const displayedError = isInvalidProductId ? 'Товар не найден' : error
 
   useEffect(() => {
@@ -77,7 +79,11 @@ function ProductPage() {
             <p className={styles.status}>
               {product.inStock ? 'В наличии' : 'Нет в наличии'}
             </p>
-            <Button disabled={!product.inStock} type="button">
+            <Button
+              disabled={!product.inStock}
+              type="button"
+              onClick={() => addProduct(product)}
+            >
               {product.inStock ? 'В корзину' : 'Нет в наличии'}
             </Button>
           </section>
