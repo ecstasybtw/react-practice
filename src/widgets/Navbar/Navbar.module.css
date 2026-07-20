@@ -1,6 +1,6 @@
 .navbar {
   border-bottom: 1px solid var(--border);
-  background: #ffffff;
+  background: var(--surface);
 }
 
 .inner {
@@ -28,7 +28,8 @@
 }
 
 .link,
-.searchButton {
+.searchButton,
+.themeButton {
   border: 1px solid var(--border);
   border-radius: 8px;
   color: var(--text-strong);
@@ -38,20 +39,22 @@
   text-decoration: none;
 }
 
-.searchButton {
-  background: #ffffff;
+.searchButton,
+.themeButton {
+  background: var(--surface);
   cursor: pointer;
 }
 
 .link:hover,
-.searchButton:hover {
+.searchButton:hover,
+.themeButton:hover {
   background: var(--surface-muted);
 }
 
 .active {
   background: var(--primary);
   border-color: var(--primary);
-  color: #ffffff;
+  color: var(--primary-contrast);
 }
 
 .active:hover {
@@ -60,7 +63,8 @@
 
 .logo:focus-visible,
 .link:focus-visible,
-.searchButton:focus-visible {
+.searchButton:focus-visible,
+.themeButton:focus-visible {
   outline: 2px solid var(--primary);
   outline-offset: 2px;
 }

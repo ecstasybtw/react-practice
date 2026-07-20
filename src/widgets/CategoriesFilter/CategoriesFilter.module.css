@@ -16,7 +16,7 @@
 }
 
 .button {
-  background: #ffffff;
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 8px;
   color: var(--text-strong);
@@ -39,7 +39,7 @@
 .active {
   background: var(--primary);
   border-color: var(--primary);
-  color: #ffffff;
+  color: var(--primary-contrast);
 }
 
 .active:hover {

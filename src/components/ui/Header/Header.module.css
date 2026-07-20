@@ -24,7 +24,7 @@
   align-items: center;
   background: var(--primary);
   border-radius: 12px;
-  color: #ffffff;
+  color: var(--primary-contrast);
   display: inline-flex;
   height: 40px;
   justify-content: center;

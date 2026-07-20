@@ -18,7 +18,7 @@
       center / 7px 7px no-repeat,
     linear-gradient(135deg, var(--text-muted) 50%, transparent 50%) right 12px
       center / 7px 7px no-repeat,
-    #ffffff;
+    var(--surface);
   border: 1px solid var(--border);
   border-radius: 12px;
   color: var(--text-strong);

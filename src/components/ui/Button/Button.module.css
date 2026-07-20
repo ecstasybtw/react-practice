@@ -20,7 +20,7 @@
 
 .button--primary {
   background: var(--primary);
-  color: #ffffff;
+  color: var(--primary-contrast);
 }
 
 .button--primary:hover:not(:disabled) {
@@ -28,7 +28,7 @@
 }
 
 .button--secondary {
-  background: #ffffff;
+  background: var(--surface);
   border: 1px solid var(--border);
   color: var(--text-strong);
 }
@@ -39,7 +39,7 @@
 
 .button--danger {
   background: var(--danger);
-  color: #ffffff;
+  color: var(--primary-contrast);
 }
 
 .button--danger:hover:not(:disabled) {

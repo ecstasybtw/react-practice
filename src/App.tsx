@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 import CartPage from './pages/CartPage/CartPage'
@@ -7,9 +8,16 @@ import LoginPage from './pages/LoginPage/LoginPage'
 import ProductPage from './pages/ProductPage/ProductPage'
 import ProfilePage from './pages/ProfilePage/ProfilePage'
 import RegisterPage from './pages/RegisterPage/RegisterPage'
+import { useThemeStore } from './store/themeStore'
 import Navbar from './widgets/Navbar/Navbar'
 
 function App() {
+  const theme = useThemeStore((state) => state.theme)
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme
+  }, [theme])
+
   return (
     <>
       <Navbar />

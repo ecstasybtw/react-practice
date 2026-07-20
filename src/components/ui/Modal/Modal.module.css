@@ -10,7 +10,7 @@
 }
 
 .modal {
-  background: #ffffff;
+  background: var(--surface);
   border-radius: 18px;
   box-shadow: 0 24px 60px rgba(15, 23, 42, 0.25);
   max-width: 460px;
@@ -48,7 +48,7 @@
 }
 
 .modal__close:hover {
-  background: #e2e8f0;
+  background: var(--border);
 }
 
 .modal__close:focus-visible {

@@ -6,6 +6,7 @@
   --text-strong: #172033;
   --text-muted: #667085;
   --primary: #315efb;
+  --primary-contrast: #ffffff;
   --primary-hover: #2347c7;
   --accent-soft: #e9efff;
   --success: #16a34a;
@@ -14,6 +15,12 @@
   --focus: rgba(49, 94, 251, 0.28);
   --shadow-card: 0 16px 40px rgba(23, 32, 51, 0.08);
   --shadow-soft: 0 10px 24px rgba(23, 32, 51, 0.14);
+  --page-gradient: radial-gradient(
+      circle at top left,
+      rgba(49, 94, 251, 0.14),
+      transparent 32rem
+    ),
+    linear-gradient(135deg, #f8fbff 0%, var(--page-bg) 42%, #eef6f2 100%);
 
   color: var(--text-muted);
   font-family: Aptos, 'Trebuchet MS', 'Segoe UI', sans-serif;
@@ -22,6 +29,31 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+:global(:root[data-theme='dark']) {
+  --page-bg: #0f172a;
+  --surface: #111827;
+  --surface-muted: #1f2937;
+  --border: #334155;
+  --text-strong: #f8fafc;
+  --text-muted: #cbd5e1;
+  --primary: #7c9cff;
+  --primary-contrast: #0f172a;
+  --primary-hover: #9bb2ff;
+  --accent-soft: #172554;
+  --success: #22c55e;
+  --danger: #fb7185;
+  --danger-hover: #f43f5e;
+  --focus: rgba(124, 156, 255, 0.32);
+  --shadow-card: 0 16px 40px rgba(0, 0, 0, 0.28);
+  --shadow-soft: 0 10px 24px rgba(0, 0, 0, 0.36);
+  --page-gradient: radial-gradient(
+      circle at top left,
+      rgba(124, 156, 255, 0.2),
+      transparent 32rem
+    ),
+    linear-gradient(135deg, #0b1120 0%, var(--page-bg) 48%, #111827 100%);
 }
 
 :global(*) {
@@ -33,9 +65,7 @@
 }
 
 :global(body) {
-  background:
-    radial-gradient(circle at top left, rgba(49, 94, 251, 0.14), transparent 32rem),
-    linear-gradient(135deg, #f8fbff 0%, var(--page-bg) 42%, #eef6f2 100%);
+  background: var(--page-gradient);
   margin: 0;
   min-width: 320px;
 }

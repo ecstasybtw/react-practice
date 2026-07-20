@@ -1,7 +1,11 @@
 import { NavLink } from 'react-router-dom'
+import { useThemeStore } from '../../store/themeStore'
 import styles from './Navbar.module.css'
 
 function Navbar() {
+  const theme = useThemeStore((state) => state.theme)
+  const toggleTheme = useThemeStore((state) => state.toggleTheme)
+
   return (
     <header className={styles.navbar}>
       <div className={styles.inner}>
@@ -12,6 +16,9 @@ function Navbar() {
         <nav className={styles.links} aria-label="Основная навигация">
           <button className={styles.searchButton} type="button">
             Поиск
+          </button>
+          <button className={styles.themeButton} type="button" onClick={toggleTheme}>
+            {theme === 'light' ? 'Темная тема' : 'Светлая тема'}
           </button>
           <NavLink
             className={({ isActive }) =>
