@@ -14,8 +14,16 @@ function Navbar() {
         </NavLink>
 
         <nav className={styles.links} aria-label="Основная навигация">
-          <button className={styles.themeButton} type="button" onClick={toggleTheme}>
-            {theme === 'light' ? 'Темная тема' : 'Светлая тема'}
+          <button
+            aria-label={
+              theme === 'light' ? 'Включить темную тему' : 'Включить светлую тему'
+            }
+            className={styles.themeButton}
+            title={theme === 'light' ? 'Темная тема' : 'Светлая тема'}
+            type="button"
+            onClick={toggleTheme}
+          >
+            {theme === 'light' ? '☾' : '☀'}
           </button>
           <NavLink
             className={({ isActive }) =>

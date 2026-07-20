@@ -29,7 +29,8 @@
 
 .link,
 .themeButton {
-  border: 1px solid var(--border);
+  border: 1px solid transparent;
+  border-bottom-width: 3px;
   border-radius: 8px;
   color: var(--text-strong);
   font-size: 15px;
@@ -40,7 +41,12 @@
 
 .themeButton {
   background: var(--surface);
+  border-color: var(--border);
   cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  min-width: 42px;
+  text-align: center;
 }
 
 .link:hover,
@@ -49,13 +55,13 @@
 }
 
 .active {
-  background: var(--primary);
-  border-color: var(--primary);
-  color: var(--primary-contrast);
+  background: transparent;
+  border-bottom-color: var(--primary);
+  color: var(--primary);
 }
 
 .active:hover {
-  background: var(--primary-hover);
+  background: var(--surface-muted);
 }
 
 .logo:focus-visible,
