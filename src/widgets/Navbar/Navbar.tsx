@@ -14,9 +14,6 @@ function Navbar() {
         </NavLink>
 
         <nav className={styles.links} aria-label="Основная навигация">
-          <button className={styles.searchButton} type="button">
-            Поиск
-          </button>
           <button className={styles.themeButton} type="button" onClick={toggleTheme}>
             {theme === 'light' ? 'Темная тема' : 'Светлая тема'}
           </button>

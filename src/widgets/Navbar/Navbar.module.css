@@ -28,7 +28,6 @@
 }
 
 .link,
-.searchButton,
 .themeButton {
   border: 1px solid var(--border);
   border-radius: 8px;
@@ -39,14 +38,12 @@
   text-decoration: none;
 }
 
-.searchButton,
 .themeButton {
   background: var(--surface);
   cursor: pointer;
 }
 
 .link:hover,
-.searchButton:hover,
 .themeButton:hover {
   background: var(--surface-muted);
 }
@@ -63,7 +60,6 @@
 
 .logo:focus-visible,
 .link:focus-visible,
-.searchButton:focus-visible,
 .themeButton:focus-visible {
   outline: 2px solid var(--primary);
   outline-offset: 2px;

@@ -26,12 +26,21 @@ function CatalogPage() {
   const [deleteError, setDeleteError] = useState('')
   const [deletingProductId, setDeletingProductId] = useState<number | null>(null)
   const [selectedCategory, setSelectedCategory] = useState(ALL_CATEGORIES)
+  const [searchQuery, setSearchQuery] = useState('')
   const isAdmin = user?.role === 'admin'
 
-  const filteredProducts =
+  const categoryProducts =
     selectedCategory === ALL_CATEGORIES
       ? products
       : products.filter((product) => product.category === selectedCategory)
+  const normalizedSearchQuery = searchQuery.trim().toLowerCase()
+  const filteredProducts = normalizedSearchQuery
+    ? categoryProducts.filter((product) => {
+        const searchableText = `${product.title} ${product.description} ${product.category}`
+
+        return searchableText.toLowerCase().includes(normalizedSearchQuery)
+      })
+    : categoryProducts
 
   useEffect(() => {
     loadProducts()
@@ -97,6 +106,16 @@ function CatalogPage() {
   return (
     <main className={styles.page}>
       <h1 className={styles.title}>Каталог</h1>
+
+      <label className={styles.search}>
+        <span>Поиск товаров</span>
+        <input
+          value={searchQuery}
+          onChange={(event) => setSearchQuery(event.target.value)}
+          placeholder="Введите название товара"
+          type="search"
+        />
+      </label>
 
       {isLoading && <p className={styles.message}>Загрузка товаров...</p>}
       {error && <p className={styles.error}>{error}</p>}

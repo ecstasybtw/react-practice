@@ -21,6 +21,37 @@
   margin: 0;
 }
 
+.search {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.search span {
+  color: var(--text-strong);
+  font-weight: 700;
+}
+
+.search input {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-strong);
+  font-size: 18px;
+  min-height: 48px;
+  padding: 0 14px;
+}
+
+.search input::placeholder {
+  color: var(--text-muted);
+}
+
+.search input:focus {
+  border-color: var(--primary);
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
 .content {
   align-items: start;
   display: grid;
