@@ -107,15 +107,6 @@
       "image": "https://placehold.co/400x500",
       "description": "Юбка из плотного денима с высокой посадкой",
       "inStock": true
-    },
-    {
-      "id": 13,
-      "title": "Солнцезащитные очки",
-      "price": 2400,
-      "category": "accessories",
-      "image": "https://placehold.co/400x500",
-      "description": "Очки с темными линзами и легкой пластиковой оправой",
-      "inStock": false
     }
   ],
   "categories": [

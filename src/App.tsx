@@ -10,6 +10,7 @@ import ProfilePage from './pages/ProfilePage/ProfilePage'
 import RegisterPage from './pages/RegisterPage/RegisterPage'
 import { useThemeStore } from './store/themeStore'
 import Navbar from './widgets/Navbar/Navbar'
+import Notification from './widgets/Notification/Notification'
 
 function App() {
   const theme = useThemeStore((state) => state.theme)
@@ -21,6 +22,7 @@ function App() {
   return (
     <>
       <Navbar />
+      <Notification />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route

@@ -4,6 +4,7 @@ import { getProductById } from '../../api/productsApi'
 import type { Product } from '../../api/productsApi'
 import Button from '../../components/ui/Button/Button'
 import { useCartStore } from '../../store/cartStore'
+import { useNotificationStore } from '../../store/notificationStore'
 import styles from './ProductPage.module.css'
 
 function formatPrice(price: number) {
@@ -19,7 +20,13 @@ function ProductPage() {
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
   const addProduct = useCartStore((state) => state.addProduct)
+  const showNotification = useNotificationStore((state) => state.showNotification)
   const displayedError = isInvalidProductId ? 'Товар не найден' : error
+
+  const handleAddToCart = (product: Product) => {
+    addProduct(product)
+    showNotification('Товар добавлен в корзину', 'success')
+  }
 
   useEffect(() => {
     if (isInvalidProductId) {
@@ -82,7 +89,7 @@ function ProductPage() {
             <Button
               disabled={!product.inStock}
               type="button"
-              onClick={() => addProduct(product)}
+              onClick={() => handleAddToCart(product)}
             >
               {product.inStock ? 'В корзину' : 'Нет в наличии'}
             </Button>

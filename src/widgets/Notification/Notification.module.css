@@ -1,0 +1,27 @@
+.notification {
+  border-radius: 10px;
+  box-shadow: var(--shadow-soft);
+  color: #ffffff;
+  font-weight: 700;
+  max-width: min(360px, calc(100vw - 28px));
+  padding: 14px 18px;
+  position: fixed;
+  right: 20px;
+  top: 84px;
+  z-index: 20;
+}
+
+.success {
+  background: var(--success);
+}
+
+.error {
+  background: var(--danger);
+}
+
+@media (max-width: 520px) {
+  .notification {
+    right: 14px;
+    top: 120px;
+  }
+}

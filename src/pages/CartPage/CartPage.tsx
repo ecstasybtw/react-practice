@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import Button from '../../components/ui/Button/Button'
 import { useCartStore } from '../../store/cartStore'
+import { useNotificationStore } from '../../store/notificationStore'
 import styles from './CartPage.module.css'
 
 function formatPrice(price: number) {
@@ -10,7 +11,13 @@ function formatPrice(price: number) {
 function CartPage() {
   const items = useCartStore((state) => state.items)
   const removeProduct = useCartStore((state) => state.removeProduct)
+  const showNotification = useNotificationStore((state) => state.showNotification)
   const totalPrice = items.reduce((sum, item) => sum + item.price, 0)
+
+  const handleRemoveProduct = (productId: number) => {
+    removeProduct(productId)
+    showNotification('Товар удален из корзины', 'error')
+  }
 
   return (
     <main className={styles.page}>
@@ -41,7 +48,7 @@ function CartPage() {
                 <Button
                   variant="danger"
                   type="button"
-                  onClick={() => removeProduct(item.id)}
+                  onClick={() => handleRemoveProduct(item.id)}
                 >
                   Удалить
                 </Button>

@@ -5,6 +5,7 @@ import { deleteProduct } from '../../api/productsApi'
 import ProductGrid from '../../components/ui/ProductGrid/ProductGrid'
 import { useAuthStore } from '../../store/authStore'
 import { useCartStore } from '../../store/cartStore'
+import { useNotificationStore } from '../../store/notificationStore'
 import { useProductsStore } from '../../store/productsStore'
 import CategoriesFilter, {
   ALL_CATEGORIES,
@@ -21,6 +22,7 @@ function CatalogPage() {
   const user = useAuthStore((state) => state.user)
   const addProduct = useCartStore((state) => state.addProduct)
   const removeProductFromCart = useCartStore((state) => state.removeProduct)
+  const showNotification = useNotificationStore((state) => state.showNotification)
   const [categories, setCategories] = useState<Category[]>([])
   const [categoriesError, setCategoriesError] = useState('')
   const [deleteError, setDeleteError] = useState('')
@@ -81,6 +83,7 @@ function CatalogPage() {
     }
 
     addProduct(product)
+    showNotification('Товар добавлен в корзину', 'success')
   }
 
   const handleDeleteProduct = async (productId: number) => {
